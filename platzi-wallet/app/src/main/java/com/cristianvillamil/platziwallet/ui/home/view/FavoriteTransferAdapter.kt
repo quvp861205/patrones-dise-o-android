@@ -1,13 +1,14 @@
-package com.cristianvillamil.platziwallet.ui.home
+package com.cristianvillamil.platziwallet.ui.home.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.cristianvillamil.platziwallet.R
+import com.cristianvillamil.platziwallet.ui.home.FavoriteTransfer
 
 class FavoriteTransferAdapter : RecyclerView.Adapter<FavoriteTransferViewHolder>() {
 
-    private lateinit var favoriteTransferItems: List<FavoriteTransfer>
+    private var favoriteTransferItems: List<FavoriteTransfer>? = null
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FavoriteTransferViewHolder =
             FavoriteTransferViewHolder(
                     LayoutInflater.from(parent.context).inflate(
@@ -18,10 +19,10 @@ class FavoriteTransferAdapter : RecyclerView.Adapter<FavoriteTransferViewHolder>
             )
 
 
-    override fun getItemCount(): Int = favoriteTransferItems.size
+    override fun getItemCount(): Int = favoriteTransferItems?.size ?: 0
 
     override fun onBindViewHolder(holder: FavoriteTransferViewHolder, position: Int) =
-            holder.bind(favoriteTransferItems[position])
+            holder.bind(favoriteTransferItems!!.get(position))
 
     fun setData(favoriteTransferItems: List<FavoriteTransfer>) {
         this.favoriteTransferItems = favoriteTransferItems
