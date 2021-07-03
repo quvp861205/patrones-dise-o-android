@@ -1,3 +1,3 @@
-[](Inicio.png)
-[](creditos.png)
-[](Transferir.png)
+![](Inicio.png)
+![](creditos.png)
+![](Transferir.png)
